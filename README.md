@@ -38,7 +38,7 @@
 > Hud 的第二行狀態需要 **對話開始** 才能取得資料顯示；  
 > `5h` / `7d` / 重置時間(5h limit) 三個項目另需 **Claude.ai 訂閱** 才會正常顯示。
 
-## 文字圖示選項
+## HUD 圖示設定
 
 編輯 `statusline-config.js` 的 `iconMode`：
 
