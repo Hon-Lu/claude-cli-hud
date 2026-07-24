@@ -1,10 +1,10 @@
 # Claude 終端 Hud
 
-#### Nerd 圖示版
+#### Nerd Font 圖示版
 
 ![Nerd 圖示版](assets/1.png)
 
-#### 純文字版
+#### Normal 文字圖示版
 
 ![純文字版](assets/2.png)
 
@@ -38,7 +38,7 @@
 > Hud 的第二行狀態需要 **對話開始** 才能取得資料顯示；  
 > `5h` / `7d` / 重置時間(5h limit) 三個項目另需 **Claude.ai 訂閱** 才會正常顯示。
 
-## 圖示模式
+## 文字圖示選項
 
 編輯 `statusline-config.js` 的 `iconMode`：
 

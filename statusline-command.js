@@ -11,7 +11,7 @@
 const { execSync } = require('child_process');
 const { iconMode } = require('./statusline-config.js');
 
-const PLAIN = iconMode === 'normal';
+const PLAIN = iconMode !== 'nerd';
 
 // Icons: Nerd Font glyph (rich) vs. monochrome text symbol (PLAIN fallback).
 const ic = {
