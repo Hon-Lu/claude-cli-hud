@@ -42,8 +42,8 @@
 
 編輯 `statusline-config.js` 的 `iconMode`：
 
-- `normal`：使用純文字圖示
-- `nerd`：一律使用 Nerd Font 圖示
+- `normal`：使用文字圖示
+- `nerd`：使用 Nerd Font 圖示
 
 ## 自訂
 
