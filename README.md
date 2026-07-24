@@ -1,13 +1,12 @@
 # Claude 終端 Hud
 
-#### WezTerm (Nerd 圖示版)
+#### Nerd 圖示版
 
-![WezTerm](assets/1.png)
-> WezTerm 可至 **[asd880921/wezterm-config](https://github.com/asd880921/wezterm-config)** 找到官網連結開始安裝 WezTerm 並套用該主題。
+![Nerd 圖示版](assets/1.png)
 
-#### Windows Terminal (純文字版)
+#### 純文字版
 
-![Windows Terminal](assets/2.png)
+![純文字版](assets/2.png)
 
 ## 前置準備
 
@@ -38,6 +37,13 @@
 
 > Hud 的第二行狀態需要 **對話開始** 才能取得資料顯示；  
 > `5h` / `7d` / 重置時間(5h limit) 三個項目另需 **Claude.ai 訂閱** 才會正常顯示。
+
+## 圖示模式
+
+編輯 `statusline-config.js` 的 `iconMode`：
+
+- `normal`：使用純文字圖示
+- `nerd`：一律使用 Nerd Font 圖示
 
 ## 自訂
 

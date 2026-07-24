@@ -3,19 +3,15 @@
  * Claude Code status line.
  * Displays: current directory, git branch, model name,
  * context usage, and (when available) rate limit usage / reset time.
- * Styled with ANSI truecolor + Nerd Font icons (WezTerm-friendly).
+ * Styled with ANSI truecolor and configurable icons.
  *
- * Nerd Font glyphs in WezTerm; every other terminal falls back to plain text.
+ * Icon mode is configured in statusline-config.js.
  */
 
 const { execSync } = require('child_process');
+const { iconMode } = require('./statusline-config.js');
 
-// A process can't read the terminal's font, so we key off the terminal program:
-// Nerd Font glyphs in WezTerm, plain text symbols everywhere else.
-const PLAIN = !(
-  process.env.TERM_PROGRAM === 'WezTerm' ||
-  process.env.WEZTERM_PANE !== undefined
-);
+const PLAIN = iconMode === 'normal';
 
 // Icons: Nerd Font glyph (rich) vs. monochrome text symbol (PLAIN fallback).
 const ic = {
