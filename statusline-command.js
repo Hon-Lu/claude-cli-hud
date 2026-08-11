@@ -64,6 +64,15 @@ const makeBar = (p, width = 6) => {
 const usage = (label, p) =>
   `${paint(c.label, label)} ${makeBar(p)} ${paint(pctColor(p), `${p}%`)}`;
 
+// Compact token count: 8500 -> "8.5K", 200000 -> "200K".
+const formatTokens = (n) => {
+  if (n >= 1000) {
+    const k = n / 1000;
+    return `${k >= 100 ? Math.round(k) : k.toFixed(1).replace(/\.0$/, '')}K`;
+  }
+  return String(n);
+};
+
 // --- main -----------------------------------------------------------------
 let raw = '';
 process.stdin.setEncoding('utf8');
@@ -122,7 +131,13 @@ process.stdin.on('end', () => {
   // Context window usage (shown once data is available)
   const used = input.context_window?.used_percentage;
   if (used !== null && used !== undefined) {
-    line2.push(usage(`${lead(ic.ctx)}context`, Math.round(used)));
+    const p = Math.round(used);
+    const totalTokens = input.context_window?.total_input_tokens;
+    const windowSize = input.context_window?.context_window_size;
+    const tokenText = (typeof totalTokens === 'number' && typeof windowSize === 'number')
+      ? ` ${paint(c.label, `(${formatTokens(totalTokens)}/${formatTokens(windowSize)})`)}`
+      : '';
+    line2.push(`${usage(`${lead(ic.ctx)}context`, p)}${tokenText}`);
   }
 
   // Rate limits (only if exposed by Claude Code)
