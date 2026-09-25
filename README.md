@@ -17,7 +17,7 @@
 1. 下載專案至 `~/.claude/` (Windows 為 `C:\Users\<你>\.claude\`)
     - 使用 Git Clone：
       ```bash
-      git clone https://github.com/asd880921/claude-cli-hud.git
+      git clone https://github.com/Hon-Lu/claude-cli-hud.git
       ```
     - 在 GitHub 頁面找到 **Code → Download ZIP** 下載並解壓縮至 `~/.claude/` 底下。 
 
